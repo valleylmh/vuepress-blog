@@ -9,15 +9,16 @@ module.exports = {
     docsDir: 'docs',
     nav: [
       // { text: 'Coding', link: '/coding/' },
-      // { text: '投资学习', link: '/invest/' },
       {
-        text: '生活life', link: '/study_life/'
+        text: '人生杂记', link: '/study_life/'
         // ariaLabel: '生活不易且珍惜',
         // items: [
-        //   { text: 'Chinese', link: '/language/chinese/' },
-        //   { text: 'Japanese', link: '/language/japanese/' }
+        //   { text: '得到APP认知学习', link: '/study_life/iget_app/' },
+        //   { text: '年度总结', link: '/study_life/year/' }
         // ]
       },
+      { text: '认知升级', link: '/upgrade/' },
+      // { text: '投资学习', link: '/invest/' },
       { text: 'github', link: 'https://github.com/valleylmh/vuepress-blog' },
     ],
     sidebar: {
@@ -34,8 +35,28 @@ module.exports = {
       ],
       '/study_life/': [
         {
-          title: '老喻的人生算法课',
+          title: '年度总结',
           collapsable: false,
+          children: [ 'year/' ]
+        },
+        {
+          title: '杂记',
+          collapsable: false,
+          children: [
+            'other/老家农村的结婚：赤裸裸的金钱交易',
+            'other/老家农村的结婚（二）——故事篇'
+          ]
+        },
+      ],
+      '/upgrade/': [
+        {
+          title: '精选好文',
+          collapsable: false,
+          children: ['goodArticle']
+        },
+        {
+          title: '老喻的人生算法课',
+          collapsable: true,
           children: [
             [LAOYULIFE+'/', '为什么推荐'],
             LAOYULIFE + '/01_A',
