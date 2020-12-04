@@ -27,4 +27,4 @@ jobs:
         access-key-id: ${{ secrets.OSS_KEY_ID }}
         access-key-secret: ${{ secrets.OSS_KEY_SECRET }}
     - name: cp files to aliyun
-      run: ossutil cp -rf ./dist oss://valleylmh-blog/
+      run: ossutil cp -rf ./dist oss://valley-blog/
