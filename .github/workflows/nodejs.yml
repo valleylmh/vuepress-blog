@@ -19,3 +19,12 @@ jobs:
         npm run build --if-present
       env:
         CI: true
+    # 设置阿里云OSS的 id/secret，存储到 github 的 secrets 中
+    - name: setup aliyun oss
+      uses: manyuanrong/setup-ossutil@master
+      with:
+        endpoint: oss-cn-hangzhou.aliyuncs.com
+        access-key-id: ${{ secrets.OSS_KEY_ID }}
+        access-key-secret: ${{ secrets.OSS_KEY_SECRET }}
+    - name: cp files to aliyun
+      run: ossutil cp -rf .vuepress/dist oss://valleylmh-blog/
