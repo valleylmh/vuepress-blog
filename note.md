@@ -1,17 +1,19 @@
-# 测试自动化部署
+# 测试自动化部署~
 
-参考文章 [实战笔记：Jenkins打造强大的前端自动化工作流](https://juejin.im/post/5ad1980e6fb9a028c42ea1be)
+参考文章 [实战笔记：Jenkins 打造强大的前端自动化工作流](https://juejin.im/post/5ad1980e6fb9a028c42ea1be)
 
 # Couldn’t find any executable in "/var/jenkins_home/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/
-# 是因为docker中jenkinsci/ocean镜像的问题，更换另一个镜像就有了node环境
+
+# 是因为 docker 中 jenkinsci/ocean 镜像的问题，更换另一个镜像就有了 node 环境
 
 ```
 npm install &&
 npm run build &&
-cd dist && 
+cd dist &&
 tar -zcvf dist.tar.gz *
 
 ```
+
 ```
 # 先授权目录
 sudo chown -R 1000:1000 /docker/jenkins_home/
