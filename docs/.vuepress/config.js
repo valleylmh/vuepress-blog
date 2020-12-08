@@ -4,6 +4,9 @@ module.exports = {
   dest: 'dist',
   title: '一界码农',
   description: '越努力越幸运',
+  head: [
+    ['link', { rel: 'shortcut icon', href: '/favicon.ico', type: 'image/x-icon' }]
+  ],
   themeConfig: {
     editLinks: false,
     docsDir: 'docs',
