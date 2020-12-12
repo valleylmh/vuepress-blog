@@ -1,4 +1,4 @@
-const LAOYULIFE = '老喻的人生算法课'
+
 module.exports = {
   // base: '/',
   dest: 'dist',
@@ -13,78 +13,35 @@ module.exports = {
     nav: [
       // { text: 'Coding', link: '/coding/' },
       {
-        text: '人生杂记', link: '/study_life/'
-        // ariaLabel: '生活不易且珍惜',
-        // items: [
-        //   { text: '得到APP认知学习', link: '/study_life/iget_app/' },
-        //   { text: '年度总结', link: '/study_life/year/' }
-        // ]
+        text: '人生杂记', //link: '/study_life/',
+        ariaLabel: '生活的理想就是为了理想的生活',
+        items: [
+          { text: '年度总结', link: '/life/year/' },
+          { text: '其他', link: '/life/other/' },
+          { text: '老喻的人生算法课', link: '/life_algorithm/' },
+        ]
       },
-      { text: '认知升级', link: '/upgrade/' },
       // { text: '投资学习', link: '/invest/' },
       { text: 'github', link: 'https://github.com/valleylmh/vuepress-blog' },
     ],
     sidebar: {
-      '/coding/': [
-        {
-          title: '初识 TypeScript',
-          collapsable: false,
-          children: [
-            ['chapter1/', 'Introduction'],
-            'chapter1/install',
-            'chapter1/start'
-          ]
-        }
-      ],
-      '/study_life/': [
+      '/life/year/': [
         {
           title: '年度总结',
           collapsable: false,
-          children: [ 'year/' ]
-        },
-        {
-          title: '杂记',
-          collapsable: false,
-          children: [
-            'other/老家农村的结婚：赤裸裸的金钱交易',
-            'other/老家农村的结婚（二）——故事篇'
-          ]
+          children: ['']
         },
       ],
-      '/upgrade/': [
-        {
-          title: '精选好文',
-          collapsable: false,
-          children: ['goodArticle']
-        },
-        {
-          title: '老喻的人生算法课',
-          collapsable: true,
-          children: [
-            [LAOYULIFE+'/', '为什么推荐'],
-            LAOYULIFE + '/01_A',
-            LAOYULIFE + '/02_A',
-            LAOYULIFE + '/03_A',
-            LAOYULIFE + '/04_A',
-            LAOYULIFE + '/05_B',
-            LAOYULIFE + '/06_B',
-            LAOYULIFE + '/07_B',
-            LAOYULIFE + '/08_B',
-            LAOYULIFE + '/09_B',
-            LAOYULIFE + '/10_B',
-            LAOYULIFE + '/11_B',
-            LAOYULIFE + '/12_B',
-            LAOYULIFE + '/13_B',
-            LAOYULIFE + '/14_B',
-            LAOYULIFE + '/15_B',
-            LAOYULIFE + '/16_B',
-            LAOYULIFE + '/17_B',
-            LAOYULIFE + '/18_B',
-            // LAOYULIFE + '/19_B',
-          ]
-        }
-      ]
-    }
+      '/life/other/': [
+        ['homeTown01', '老家农村的结婚：赤裸裸的金钱交易'],
+        ['homeTown02', '老家农村的结婚（二）——故事篇']
+      ],
+      '/life_algorithm/': [
+        ['', '为什么推荐'],
+        '01_A', '02_A', '03_A', '04_A', '05_B', '06_B', '07_B', '08_B', '09_B', '10_B', '11_B', '12_B', '13_B', '14_B', '15_B', '16_B', '17_B', '18_B', 
+      ],
+    },
+    lastUpdated: 'Last Updated',
   },
   plugins: [
     ['@vuepress/back-to-top'],
