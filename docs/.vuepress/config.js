@@ -6,7 +6,7 @@ module.exports = {
   description: '越努力越幸运',
   head: [
     ['link', { rel: 'shortcut icon', href: '/favicon.ico', type: 'image/x-icon' }],
-    ['meta', { name: 'referer', content: 'no-referer' }]
+    ['meta', { name: 'referrer', content: 'no-referrer' }]
   ],
   themeConfig: {
     editLinks: false,
