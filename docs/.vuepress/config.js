@@ -5,7 +5,8 @@ module.exports = {
   title: '一界码农',
   description: '越努力越幸运',
   head: [
-    ['link', { rel: 'shortcut icon', href: '/favicon.ico', type: 'image/x-icon' }]
+    ['link', { rel: 'shortcut icon', href: '/favicon.ico', type: 'image/x-icon' }],
+    ['meta', { name: 'referer', content: 'no-referer' }]
   ],
   themeConfig: {
     editLinks: false,
