@@ -42,7 +42,7 @@ module.exports = {
         '01_A', '02_A', '03_A', '04_A', '05_B', '06_B', '07_B', '08_B', '09_B', '10_B', '11_B', '12_B', '13_B', '14_B', '15_B', '16_B', '17_B', '18_B', 
       ],
     },
-    lastUpdated: 'Last Updated',
+    lastUpdated: '上次更新',
   },
   plugins: [
     ['@vuepress/back-to-top'],
