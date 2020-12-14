@@ -1,4 +1,5 @@
 
+const vue2 = require('../vue2.x/sidebar')
 module.exports = {
   // base: '/',
   dest: 'dist',
@@ -15,7 +16,7 @@ module.exports = {
     editLinks: false,
     docsDir: 'docs',
     nav: [
-      // { text: 'Coding', link: '/coding/' },
+      { text: 'Vue', link: '/vue2.x/' },
       {
         text: '人生杂记', //link: '/study_life/',
         ariaLabel: '生活的理想就是为了理想的生活',
@@ -29,6 +30,13 @@ module.exports = {
       { text: 'github', link: 'https://github.com/valleylmh/vuepress-blog' },
     ],
     sidebar: {
+      '/vue2.x/': [
+        {
+          title: 'Vue2.x版本',
+          collapsable: true,
+          children: vue2
+        }
+      ],
       '/life/year/': [
         {
           title: '年度总结',
