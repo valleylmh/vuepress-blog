@@ -16,10 +16,12 @@ module.exports = {
   themeConfig: {
     editLinks: false,
     docsDir: 'docs',
-    // algolia: {
-    //   apiKey: '8aa26175ecbc4cba2eb6395325e77be0',
-    //   indexName: 'blog'
-    // },
+    algolia: {
+      appId: '9SS6JJUJ4Z',
+      apiKey: '8aa26175ecbc4cba2eb6395325e77be0',
+      indexName: 'blog',
+      facetFilters: ['lang: zh-CN'],
+    },
     nav: [
       { text: 'Vue', link: '/vue2.x/' },
       {
