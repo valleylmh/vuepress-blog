@@ -7,6 +7,7 @@ module.exports = {
   description: '越努力越幸运',
   head: [
     ['link', { rel: 'shortcut icon', href: '/favicon.ico', type: 'image/x-icon' }],
+    ['meta', { name: 'keywords', content: '一界码农'}],
     ['meta', { name: 'referrer', content: 'no-referrer' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
@@ -15,6 +16,10 @@ module.exports = {
   themeConfig: {
     editLinks: false,
     docsDir: 'docs',
+    // algolia: {
+    //   apiKey: '14afb3285aacddb9116b2e7b4d3c48c6',
+    //   indexName: 'blog'
+    // },
     nav: [
       { text: 'Vue', link: '/vue2.x/' },
       {
