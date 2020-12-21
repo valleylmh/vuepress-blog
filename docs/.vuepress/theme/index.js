@@ -12,14 +12,15 @@ module.exports = {
         [
           '@vuepress/last-updated',
           {
-            transformer: (timestamp, lang) => {
-              const dayjs = require('dayjs')
-              require('dayjs/locale/zh-cn')
-              dayjs.locale('zh-cn') // 全局使用
-              dayjs().locale('zh-cn').format() // 当前实例使用
-              // const time = process.env.NODE_ENV === 'development' ? dayjs(timestamp) : dayjs(timestamp).utcOffset(8)
-              return dayjs(timestamp).format('YYYY-MM-DD HH:mm')
-            }
+            dateOptions: { hour12: false }
+            // transformer: (timestamp, lang) => {
+            //   const dayjs = require('dayjs')
+            //   require('dayjs/locale/zh-cn')
+            //   dayjs.locale('zh-cn') // 全局使用
+            //   dayjs().locale('zh-cn').format() // 当前实例使用
+            //   // const time = process.env.NODE_ENV === 'development' ? dayjs(timestamp) : dayjs(timestamp).utcOffset(8)
+            //   return dayjs(timestamp).format('YYYY-MM-DD HH:mm')
+            // }
           }
         ]
     ]
