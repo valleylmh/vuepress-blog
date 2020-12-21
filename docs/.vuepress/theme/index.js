@@ -14,10 +14,8 @@ module.exports = {
           {
             transformer: (timestamp, lang) => {
               const dayjs = require('dayjs')
-              const relativeTime = require('dayjs/plugin/relativeTime')
-              dayjs.extend(relativeTime)
               // moment.locale(lang)
-              return dayjs(timestamp).fromNow()
+              return dayjs(timestamp).format('YYYY-MM-DD HH:mm')
             }
           }
         ]
