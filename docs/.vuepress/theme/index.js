@@ -15,7 +15,7 @@ module.exports = {
             transformer: (timestamp, lang) => {
               const dayjs = require('dayjs')
               // console.log('process.env.NODE_ENV=====',process.env.NODE_ENV)
-              const time = process.env.NODE_ENV === 'development' ? dayjs(timestamp) : dayjs.unix(timestamp)
+              const time = process.env.NODE_ENV === 'development' ? dayjs(timestamp) : dayjs(timestamp).utcOffset(8)
               // moment.locale(lang)
               return time.format('YYYY-MM-DD HH:mm')
             }

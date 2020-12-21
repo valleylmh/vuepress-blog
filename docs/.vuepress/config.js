@@ -17,7 +17,7 @@ module.exports = {
     editLinks: false,
     docsDir: 'docs',
     // algolia: {
-    //   apiKey: '14afb3285aacddb9116b2e7b4d3c48c6',
+    //   apiKey: '8aa26175ecbc4cba2eb6395325e77be0',
     //   indexName: 'blog'
     // },
     nav: [
