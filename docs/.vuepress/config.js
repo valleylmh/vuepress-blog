@@ -13,6 +13,9 @@ module.exports = {
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover' }],
   ],
+  locales: {
+    '/': {lang: 'zh-CN'}
+  },
   themeConfig: {
     editLinks: false,
     docsDir: 'docs',
@@ -20,7 +23,7 @@ module.exports = {
       appId: '9SS6JJUJ4Z',
       apiKey: '8aa26175ecbc4cba2eb6395325e77be0',
       indexName: 'blog',
-      facetFilters: ['lang: zh-CN'],
+      // facetFilters: ['lang: zh-CN'],
     },
     nav: [
       { text: 'Vue', link: '/vue2.x/' },

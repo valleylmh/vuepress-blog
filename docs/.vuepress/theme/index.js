@@ -14,9 +14,10 @@ module.exports = {
           {
             transformer: (timestamp, lang) => {
               const dayjs = require('dayjs')
-              // console.log('process.env.NODE_ENV=====',process.env.NODE_ENV)
+              require('dayjs/locale/zh-cn')
+              dayjs.locale('zh-cn') // 全局使用
+              dayjs().locale('zh-cn').format() // 当前实例使用
               // const time = process.env.NODE_ENV === 'development' ? dayjs(timestamp) : dayjs(timestamp).utcOffset(8)
-              // moment.locale(lang)
               return dayjs(timestamp).format()//format('YYYY-MM-DD HH:mm')
             }
           }
