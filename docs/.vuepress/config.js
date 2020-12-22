@@ -7,10 +7,10 @@ module.exports = {
   description: '越努力越幸运',
   head: [
     ['link', { rel: 'shortcut icon', href: '/favicon.ico', type: 'image/x-icon' }],
-    ['meta', { name: 'keywords', content: '一界码农'}],
     ['meta', { name: 'referrer', content: 'no-referrer' }],
-    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+    ['meta', { name: 'baidu-site-verification', content: 'no-referrer' }],
+    ['meta', { name: 'renderer', content: 'webkit' }],
+    ['meta', { 'http-equiv': 'X-UA-Compatible', content: 'edge' }],
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover' }],
   ],
   locales: {
