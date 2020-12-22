@@ -18,8 +18,8 @@ module.exports = {
               require('dayjs/locale/zh-cn')
               // dayjs.locale('zh-cn') // 全局使用
               // dayjs().locale('zh-cn').format() // 当前实例使用
+              timestamp = process.env.NODE_ENV === 'development' ? timestamp : timestamp + 8*60*60*1000
               console.log('timestamp========',timestamp)
-              timestamp = process.env.NODE_ENV === 'development' ? timestamp : timestamp + 8*60*60
               return dayjs(timestamp).format('YYYY-MM-DD HH:mm')
             }
           }
