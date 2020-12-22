@@ -8,7 +8,7 @@ module.exports = {
   head: [
     ['link', { rel: 'shortcut icon', href: '/favicon.ico', type: 'image/x-icon' }],
     ['meta', { name: 'referrer', content: 'no-referrer' }],
-    // ['meta', { name: 'baidu-site-verification', content: 'a40ea45f7e812f35bb88ba0db4f7e663' }],
+    ['meta', { name: 'baidu-site-verification', content: 'code-IoDDvZg9UC' }],
     ['meta', { name: 'renderer', content: 'webkit' }],
     ['meta', { 'http-equiv': 'X-UA-Compatible', content: 'edge' }],
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover' }],
