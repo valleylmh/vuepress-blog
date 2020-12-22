@@ -8,10 +8,22 @@ module.exports = {
   head: [
     ['link', { rel: 'shortcut icon', href: '/favicon.ico', type: 'image/x-icon' }],
     ['meta', { name: 'referrer', content: 'no-referrer' }],
-    ['meta', { name: 'baidu-site-verification', content: 'no-referrer' }],
+    // ['meta', { name: 'baidu-site-verification', content: 'a40ea45f7e812f35bb88ba0db4f7e663' }],
     ['meta', { name: 'renderer', content: 'webkit' }],
     ['meta', { 'http-equiv': 'X-UA-Compatible', content: 'edge' }],
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover' }],
+    
+    [ // 添加百度统计
+      "script", {}, `
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?a40ea45f7e812f35bb88ba0db4f7e663";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+      `
+    ]
   ],
   locales: {
     '/': {lang: 'zh-CN'}
