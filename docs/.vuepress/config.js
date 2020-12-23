@@ -11,6 +11,7 @@ module.exports = {
     ['link', { rel: 'shortcut icon', href: '/favicon.ico', type: 'image/x-icon' }],
     ['meta', { name: 'referrer', content: 'no-referrer' }],
     ['meta', { name: 'baidu-site-verification', content: 'code-IoDDvZg9UC' }],
+    ['meta', { name: 'baidu_union_verify', content: 'ef8729d54c118ea2f89c9b5813838aaa' }],
     ['meta', { name: 'renderer', content: 'webkit' }],
     ['meta', { 'http-equiv': 'X-UA-Compatible', content: 'edge' }],
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover' }],
@@ -30,10 +31,10 @@ module.exports = {
     '/': {lang: 'zh-CN'}
   },
   additionalPages: [
-    {
-      path: '/bdunion.txt/',
-      filePath: path.resolve(__dirname, './public/bdunion.txt')
-    }
+    // { // 百度联盟推广
+    //   path: '/bdunion.txt/',
+    //   filePath: path.resolve(__dirname, './public/bdunion.txt')
+    // }
   ],
   themeConfig: {
     editLinks: false,
