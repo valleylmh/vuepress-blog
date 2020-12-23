@@ -1,5 +1,7 @@
 
+const path = require('path')
 const vue2 = require('../vue2.x/sidebar')
+console.log(path.resolve(__dirname, './public/bdunion.txt'))
 module.exports = {
   // base: '/',
   dest: 'dist',
@@ -12,7 +14,6 @@ module.exports = {
     ['meta', { name: 'renderer', content: 'webkit' }],
     ['meta', { 'http-equiv': 'X-UA-Compatible', content: 'edge' }],
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover' }],
-    
     [ // 添加百度统计
       "script", {}, `
         var _hmt = _hmt || [];
@@ -23,11 +24,17 @@ module.exports = {
           s.parentNode.insertBefore(hm, s);
         })();
       `
-    ]
+    ],
   ],
   locales: {
     '/': {lang: 'zh-CN'}
   },
+  additionalPages: [
+    {
+      path: '/bdunion.txt/',
+      filePath: path.resolve(__dirname, './public/bdunion.txt')
+    }
+  ],
   themeConfig: {
     editLinks: false,
     docsDir: 'docs',
