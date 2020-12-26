@@ -2,7 +2,7 @@
 home: true
 heroImage: /logo.jpg
 actionText: 个人主页 →
-actionLink: /study_life/
+actionLink: /life/year/
 features:
 - title: Coding为生
   details: 以技术谋生、面向API编程

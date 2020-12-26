@@ -49,13 +49,19 @@ module.exports = {
       // indexName: 'blog',
     },
     nav: [
-      { text: 'Vue', link: '/vue2.x/' },
       {
-        text: '人生杂记', //link: '/study_life/',
+        text: 'FrontEnd',
+        ariaLabel: '只要学得动，就往死里学',
+        items: [
+          { text: 'Vue相关', link: '/vue2.x/' },
+        ]
+      },
+      {
+        text: '随笔', //link: '/study_life/',
         ariaLabel: '生活的理想就是为了理想的生活',
         items: [
           { text: '年度总结', link: '/life/year/' },
-          { text: '其他', link: '/life/other/' },
+          { text: '杂记', link: '/life/other/' },
           { text: '老喻的人生算法课', link: '/life_algorithm/' },
         ]
       },
@@ -74,7 +80,7 @@ module.exports = {
         {
           title: '年度总结',
           collapsable: false,
-          children: ['']
+          children: ['2019','2020']
         },
       ],
       '/life/other/': [
