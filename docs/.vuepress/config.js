@@ -53,6 +53,7 @@ module.exports = {
         text: 'FrontEnd',
         ariaLabel: '只要学得动，就往死里学',
         items: [
+          { text: '学习路线', link: '/roadmap/' },
           { text: 'Vue相关', link: '/vue2.x/' },
         ]
       },

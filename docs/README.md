@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /logo.jpg
-actionText: 个人主页 →
+actionText: 个人主页
 actionLink: /life/year/
 features:
 - title: Coding为生
