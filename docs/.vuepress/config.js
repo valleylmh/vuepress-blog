@@ -1,7 +1,8 @@
 
 const path = require('path')
 const vue2 = require('../vue2.x/sidebar')
-console.log(path.resolve(__dirname, './public/bdunion.txt'))
+const vue3 = require('../vue3.x/sidebar')
+// console.log(path.resolve(__dirname, './public/bdunion.txt'))
 module.exports = {
   // base: '/',
   dest: 'dist',
@@ -54,7 +55,8 @@ module.exports = {
         ariaLabel: '只要学得动，就往死里学',
         items: [
           { text: '学习路线', link: '/roadmap/' },
-          { text: 'Vue相关', link: '/vue2.x/' },
+          { text: 'VueJs3.0', link: '/vue3.x/notes/' },
+          { text: 'VueJs2.x', link: '/vue2.x/' },
         ]
       },
       {
@@ -70,10 +72,17 @@ module.exports = {
       { text: 'github', link: 'https://github.com/valleylmh/vuepress-blog' },
     ],
     sidebar: {
+      '/vue3.x/notes/': [
+        {
+          title: 'VueJs3.0核心源码解析',
+          collapsable: false,
+          children: vue3
+        }
+      ],
       '/vue2.x/': [
         {
           title: 'Vue2.x版本',
-          collapsable: true,
+          collapsable: false,
           children: vue2
         }
       ],
