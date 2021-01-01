@@ -40,9 +40,9 @@ var sign = function(jsapi_ticket, url) {
 		url: url,
 	};
 	var string = raw(ret);
-    var jsSHA = require("jssha/dist/sha1");
+    var jsSHA = require("jssha");
 	var shaObj = new jsSHA(string, "TEXT");
-	// ret.signature = shaObj.getHash("SHA-1", "HEX");
+	ret.signature = shaObj.getHash("SHA-1", "HEX");
 
 	return ret;
 };
