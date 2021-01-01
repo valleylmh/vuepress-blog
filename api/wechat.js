@@ -22,8 +22,8 @@ const Token = {
 }
 const config = {
     // 测试号 生产环境 一届码农公众号
-    appID: process.env.NODE_ENV === 'development' ? 'wx43852f8f0e199224' : 'wxf556eacceb6b785e',
-    appSecret: process.env.NODE_ENV === 'development' ? '3fcaa30f1c7c52db0a60e17ce6dccf1d' : process.env.wechatAppSecret,
+    appID: process.env.NODE_ENV === 'production' ? 'wx43852f8f0e199224' : 'wxf556eacceb6b785e',
+    appSecret: process.env.NODE_ENV === 'production' ? '3fcaa30f1c7c52db0a60e17ce6dccf1d' : process.env.wechatAppSecret,
     // auth: 'https://api.weixin.qq.com/sns/oauth2', // 授权回调
     cgiBin: 'https://api.weixin.qq.com/cgi-bin', // 获取普通的access_token ticket使用
     getAccessToken: async () => await Token.getAccessToken(),
@@ -75,6 +75,17 @@ Wechat.prototype.updateAccessToken = async function() {
     return data.access_token
 }
 
+Wechat.prototype.getJsTicket = async function() {
+    const accessToken = await this.fetchAccessToken()
+    const { data } = await axios.get(this.cgiBin + '/ticket/getticket', {
+        params: { access_token: accessToken, type: 'jsapi' }
+    })
+    if (data.errcode) {
+        console.log('wechat error=============', data.errmsg)
+        return
+    }
+    return data.ticket
+}
 const wechatInstance = new Wechat(config)
 
 module.exports = wechatInstance
