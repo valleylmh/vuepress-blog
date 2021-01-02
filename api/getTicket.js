@@ -11,5 +11,6 @@ module.exports = async (req, res) => {
     const ticket = await wechat.getJsTicket()
     const { url = 'https://valleylmh.vip' } = req.query
     const obj = genSign(ticket, url)
+    obj.appId = wechat.appID
     res.json(obj)
 }

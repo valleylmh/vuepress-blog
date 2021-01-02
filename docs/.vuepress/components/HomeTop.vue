@@ -4,12 +4,10 @@
 </template>
 
 <script>
-import axios from 'axios'
+import wxSdk from './wxSdk.js'
 export default {
   mounted() {
-    axios.get('/api/getTicket', {url: 'asdf'}).then(res => {
-      console.log(res)
-    })
+    wxSdk.initConfig()
     const aBtn = document.querySelector('.action-button')
     const siderBtn = document.querySelector('.sidebar-button')
     // .theme-container 父节点
@@ -23,7 +21,6 @@ export default {
       e.stopPropagation()
     }, false)
     container.addEventListener('click',() => {
-      console.log('asdf')
       if (container.classList.contains('additional')) {
         container.classList.remove('additional')
         container.classList.remove('sidebar-open')
