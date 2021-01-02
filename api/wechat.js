@@ -22,11 +22,11 @@ const Token = {
 }
 const config = {
     // 本地测试是用测试号 
-    appID: 'wx43852f8f0e199224',
-    appSecret: '3fcaa30f1c7c52db0a60e17ce6dccf1d',
+    // appID: 'wx43852f8f0e199224',
+    // appSecret: '3fcaa30f1c7c52db0a60e17ce6dccf1d',
     // 生产环境 一届码农公众号
-    // appID: 'wxf556eacceb6b785e',
-    // appSecret: process.env.wechatAppSecret,
+    appID: 'wxf556eacceb6b785e',
+    appSecret: process.env.wechatAppSecret,
     // auth: 'https://api.weixin.qq.com/sns/oauth2', // 授权回调
     cgiBin: 'https://api.weixin.qq.com/cgi-bin', // 获取普通的access_token ticket使用
     getAccessToken: async () => await Token.getAccessToken(),

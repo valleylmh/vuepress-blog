@@ -14,12 +14,12 @@ const config = {
 // 微信SDK初始化配置
 const initConfig = async () => {
   // 调接口获取签名、随机数和时间戳，配置微信官方接口参数
-  const { data: { timestamp, nonceStr, signature}} = await axios.get('https://valleylmh.vip/api/getTicket',
+  const { data: { appId, timestamp, nonceStr, signature}} = await axios.get('https://valleylmh.vip/api/getTicket',
     {
       params: { url: location.href} 
     }
   )
-  wx.config({ ...config, timestamp, nonceStr, signature }) // wx为全局变量，在index.html通过script标签引入
+  wx.config({ ...config, appId, timestamp, nonceStr, signature }) // wx为全局变量，在index.html通过script标签引入
 }
 
 const share = (option = {}) => {
