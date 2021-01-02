@@ -6,8 +6,9 @@
 <script>
 import wxSdk from './wxSdk.js'
 export default {
-  mounted() {
-    wxSdk.initConfig()
+  async mounted() {
+    await wxSdk.initConfig()
+    wxSdk.share()
     const aBtn = document.querySelector('.action-button')
     const siderBtn = document.querySelector('.sidebar-button')
     // .theme-container 父节点
