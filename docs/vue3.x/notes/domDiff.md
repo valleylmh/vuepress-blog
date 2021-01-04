@@ -2,7 +2,7 @@
 组件渲染的过程，本质上就是把各种类型的 vnode 渲染成真实 DOM。*组件是由模板、组件描述对象和数据构成的*，数据的变化会影响组件的变化。组件的渲染过程中创建了一个带副作用的渲染函数，当数据变化的时候就会执行这个渲染函数来触发组件的更新。
 
 ### 副作用渲染函数更新组件的过程
-```
+```js
 // packages/runtime-core/src/renderer.ts
 const setupRenderEffect = (instance, initialVNode, container, anchor, parentSuspense, isSVG, optimized) => {
   // 创建响应式的副作用渲染函数
@@ -47,7 +47,7 @@ const setupRenderEffect = (instance, initialVNode, container, anchor, parentSusp
 ### 核心逻辑：patch 流程
 patch -> processComponent -> updateComponent
 组件更新的相关逻辑updateComponent函数实现：
-```
+```js
 const processComponent = (n1, n2, container, anchor, parentComponent, parentSuspense, isSVG, optimized) => {
   if (n1 == null) {
     // 挂载组件
@@ -79,7 +79,7 @@ processComponent 主要通过执行 updateComponent 函数来更新子组件，u
 如果 shouldUpdateComponent 返回 true ，那么在它的最后，先执行 invalidateJob（instance.update）避免子组件由于自身数据变化导致的重复更新，然后又执行了子组件的副作用渲染函数 instance.update 来主动触发子组件的更新。
 
 回到副作用渲染函数中，再看组件更新的这部分代码逻辑：
-```
+```js
 // 更新组件
 let { next, vnode } = instance
 // next 表示新的组件 vnode
@@ -111,7 +111,7 @@ const updateComponentPreRender = (instance, nextVNode, optimized) => {
 
 组件是抽象的，组件的更新最终还是会落到对普通 DOM 元素的更新。
 processElement函数实现：
-```
+```js
 const processElement = (n1, n2, container, anchor, parentComponent, parentSuspense, isSVG, optimized) => {
   isSVG = isSVG || n2.type === 'svg'
   if (n1 == null) {
@@ -133,10 +133,10 @@ const patchElement = (n1, n2, parentComponent, parentSuspense, isSVG, optimized)
   patchChildren(n1, n2, el, null, parentComponent, parentSuspense, areChildrenSVG)
 }
 ```
->patchElement函数主要的两部分: 1. patchProps(style, class, event. prop); 2. patchChildren（full difff）或是 patchBlockChildren
+> patchElement函数主要的两部分: 1. patchProps(style, class, event. prop); 2. patchChildren（full difff）或是 patchBlockChildren
 
  patchChildren 函数的实现：
-```
+```js
 const patchChildren = (n1, n2, container, anchor, parentComponent, parentSuspense, isSVG, optimized = false) => {
   const c1 = n1 && n1.children
   const prevShapeFlag = n1 ? n1.shapeFlag : 0
@@ -194,7 +194,7 @@ const patchChildren = (n1, n2, container, anchor, parentComponent, parentSuspens
 **核心 diff 算法**，就是在已知旧子节点的 DOM 结构、vnode 和新子节点的 vnode 情况下，以较低的成本完成子节点的更新为目的，求解生成新子节点 DOM 的系列操作。
 
 ### 同步头部节点（掐头）和同步尾部节点（去尾）
-```
+```js
 const patchKeyedChildren = (c1, c2, container, parentAnchor, parentComponent, parentSuspense, isSVG, optimized) => {
   let i = 0
   const l2 = c2.length
@@ -296,7 +296,7 @@ keyToNewIndexMap 存储的就是新子序列中每个节点在新子序列中的
 我们得到了一个值为 {e:2,c:3,d:4,i:5} 的新子序列索引图。
 
 ### 更新和移除旧节点
-```
+```js
 const patchKeyedChildren = (c1, c2, container, parentAnchor, parentComponent, parentSuspense, isSVG, optimized) => {
   let i = 0
   const l2 = c2.length
@@ -376,7 +376,7 @@ const patchKeyedChildren = (c1, c2, container, parentAnchor, parentComponent, pa
 
 ### 移动和挂载新节点
 接下来，就到了处理未知子序列的最后一个流程，移动和挂载新节点，我们来看一下这部分逻辑的实现：
-```
+```js
 const patchKeyedChildren = (c1, c2, container, parentAnchor, parentComponent, parentSuspense, isSVG, optimized) => {
   let i = 0
   const l2 = c2.length
@@ -456,7 +456,7 @@ const patchKeyedChildren = (c1, c2, container, parentAnchor, parentComponent, pa
 这种做法的主要目的是让递增序列的差尽可能的小，从而可以获得更长的递增子序列，这便是一种贪心算法的思想。
 
 了解了算法的大致思想后，接下来我们看一下源码实现：
-```
+```js
 function getSequence (arr) {
   const p = arr.slice()
   const result = [0]
@@ -503,7 +503,7 @@ function getSequence (arr) {
 }
 ```
 其中 result 存储的是长度为 i 的递增子序列最小末尾值的索引。比如我们上述例子的第九步，在对数组 p 回溯之前， result 值就是 [1, 3, 4, 7, 9] ，这不是最长递增子序列，它只是存储的对应长度递增子序列的最小末尾。因此在整个遍历过程中会额外用一个数组 p，来存储在每次更新 result 前最后一个索引的值，并且它的 key 是这次要更新的 result 值：
-```
+```js
 j = result[result.length - 1]
 p[i] = j
 result.push(i)

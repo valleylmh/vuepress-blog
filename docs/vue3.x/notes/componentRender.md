@@ -16,7 +16,7 @@ const createApp = ((...args) => {
 ```
 createApp 主要做了两件事情：创建 app 对象和重写 app.mount 方法。
 
-```
+```js
 // 渲染相关的一些配置，比如更新属性的方法，操作 DOM 的方法
 const rendererOptions = {
   patchProp,
@@ -67,7 +67,7 @@ function createAppAPI(render) {
 
 **2. 重写 app.mount 方法**
 Vue.js 不仅仅是为 Web 平台服务，它的目标是支持跨平台渲染，而 createApp 函数内部的 app.mount 方法是一个标准的可跨平台的组件渲染流程：
-```
+```js
 mount(rootContainer) {
   // 创建根组件的 vnode
   const vnode = createVNode(rootComponent, rootProps)
@@ -79,7 +79,7 @@ mount(rootContainer) {
 ```
 标准的跨平台渲染流程是先创建 vnode，再渲染 vnode。此外参数 rootContainer 也可以是不同类型的值，比如，在 Web 平台它是一个 DOM 对象，而在其他平台（比如 Weex 和小程序）中可以是其他类型的值。
 Web 平台重写mount方法完善渲染逻辑
-```
+```js
 app.mount = (containerOrSelector) => {
   // 标准化容器
   const container = normalizeContainer(containerOrSelector)
@@ -107,7 +107,7 @@ vnode 有什么优势？为什么一定要设计 vnode 这样的数据结构？
 其次是跨平台，因为 patch vnode 的过程不同平台可以有自己的实现，基于 vnode 再做服务端渲染、Weex 平台、小程序平台的渲染都变得容易了很多。
 
 createVNode 函数实现：
-```
+```js
 function createVNode(type, props = null, children = null) {
   if (props) {
     // 处理 props 相关逻辑，标准化 class 和 style
@@ -140,7 +140,7 @@ createVNode 做的事情很简单，就是：对 props 做标准化处理、对 
 2. 渲染 vnode
 通过render渲染器方法实现，内部是通过patch方法创建或者更新组件。
 patch 函数的实现：
-```
+```js
 const patch = (n1, n2, container, anchor = null, parentComponent = null, parentSuspense = null, isSVG = false, optimized = false) => {
   // 如果存在新旧节点, 且新旧节点类型不同，则销毁旧节点
   if (n1 && !isSameVNodeType(n1, n2)) {
@@ -188,7 +188,7 @@ patch 本意是打补丁的意思，这个函数有两个功能，一个是根�
 
 对于渲染的节点，重点关注两种类型节点的渲染逻辑：对组件的处理和对普通 DOM 元素的处理。
 processComponent 函数的实现：
-```
+```js
 const processComponent = (n1, n2, container, anchor, parentComponent, parentSuspense, isSVG, optimized) => {
   if (n1 == null) {
    // 挂载组件
@@ -201,7 +201,7 @@ const processComponent = (n1, n2, container, anchor, parentComponent, parentSusp
 }
 ```
 挂载组件的 mountComponent 函数的实现：
-```
+```js
 const mountComponent = (initialVNode, container, anchor, parentComponent, parentSuspense, isSVG, optimized) => {
   // 创建组件实例
   const instance = (initialVNode.component = createComponentInstance(initialVNode, parentComponent, parentSuspense))
@@ -213,7 +213,7 @@ const mountComponent = (initialVNode, container, anchor, parentComponent, parent
 ```
 可以看到，挂载组件函数 mountComponent 主要做三件事情：创建组件实例、设置组件实例、设置并运行带副作用的渲染函数。
 运行带副作用的渲染函数 setupRenderEffect函数的实现：
-```
+```js
 const setupRenderEffect = (instance, initialVNode, container, anchor, parentSuspense, isSVG, optimized) => {
   // 创建响应式的副作用渲染函数
   instance.update = effect(function componentEffect() {

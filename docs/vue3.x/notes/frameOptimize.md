@@ -3,7 +3,7 @@
 
 ### 源码优化
 源码的优化主要体现在使用 monorepo 和 TypeScript 管理和开发源码，这样做的目标是提升自身代码可维护性。
-#####1. 更好的代码管理方式：monorepo
+##### 1. 更好的代码管理方式：monorepo
 首先，源码的优化体现在代码管理方式上。Vue.js 2.x 的源码托管在 src 目录，然后依据功能拆分出了 compiler（模板编译的相关代码）、core（与平台无关的通用运行时代码）、platforms（平台专有代码）、server（服务端渲染的相关代码）、sfc（.vue 单文件解析相关代码）、shared（共享工具代码） 等目录：
 
 ![](https://upload-images.jianshu.io/upload_images/3061147-514c577b8ce2e2bc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -16,7 +16,7 @@
 
 另外一些 package（比如 reactivity 响应式库）是可以独立于 Vue.js 使用的，这样用户如果只想使用 Vue.js 3.0 的响应式能力，可以单独依赖这个响应式库而不用去依赖整个 Vue.js，减小了引用包的体积大小，而 Vue.js 2 .x 是做不到这一点的。
 
-####2. 有类型的 JavaScript：TypeScript
+#### 2. 有类型的 JavaScript：TypeScript
 Vue.js 3.0 抛弃 2.x版本的Flow 后，使用 TypeScript 重构了整个项目。 TypeScript提供了更好的类型检查，能支持复杂的类型推导；由于源码就使用 TypeScript 编写，也省去了单独维护 d.ts 文件的麻烦；就整个 TypeScript 的生态来看，TypeScript 团队也是越做越好，TypeScript 本身保持着一定频率的迭代和更新，支持的 feature 也越来越多。
 
 ### 性能优化
@@ -56,7 +56,7 @@ observed = new Proxy(data, {
 ##### 3. 编译优化
 优化整个 Vue.js 的运行时，除了数据劫持部分的优化，我们可以在耗时相对较多的 patch 阶段想办法标记静态类型优化。
 Vue2.x更新组件，会遍历整个VNode。比如：
-```
+```js
 <template>
   <div id="content">
     <p class="text">static text</p>
@@ -78,7 +78,7 @@ Vue.js 3.0 做到了，它通过编译阶段对静态模板的分析，编译生
 
 除此之外，Vue.js 3.0 在编译阶段还包含了对 Slot 的编译优化、事件侦听函数的缓存优化，并且在运行时重写了 diff 算法，些性能优化的内容后续特定的章节笔记分享。
 
-###语法 API 优化：Composition API
+### 语法 API 优化：Composition API
 ##### 1. 优化逻辑组织
 > 2.x版本**编写组件本质就是在编写一个“包含了描述组件选项的对象”**。
 
