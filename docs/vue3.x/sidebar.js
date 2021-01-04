@@ -6,9 +6,4 @@ module.exports = [
     [notes + 'compositionApi.md', '逻辑复用最佳实践：Composition API'],
     [notes + 'reactivity.md', '响应式：响应式内部的实现原理是怎样的？'],
     [notes + 'computed.md', '计算属性：计算属性比普通函数好在哪里？'],
-    // {
-    //   title: '性能优化',
-    //   collapsable: false,
-    //   children: [notes + 'frameOptimize.md']
-    // },
 ]

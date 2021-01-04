@@ -97,7 +97,7 @@ app.mount = (containerOrSelector) => {
 }
 ```
 
-### 核心渲染流程：创建 vnode 和渲染 vnode
+## 核心渲染流程：创建 vnode 和渲染 vnode
 1. 创建 vnode
 普通元素vnode、组件vnode、纯文本 vnode、注释vnode
 

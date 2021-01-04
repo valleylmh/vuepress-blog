@@ -1,7 +1,7 @@
 # 完整DOM diff流程
 组件渲染的过程，本质上就是把各种类型的 vnode 渲染成真实 DOM。*组件是由模板、组件描述对象和数据构成的*，数据的变化会影响组件的变化。组件的渲染过程中创建了一个带副作用的渲染函数，当数据变化的时候就会执行这个渲染函数来触发组件的更新。
 
-### 副作用渲染函数更新组件的过程
+## 副作用渲染函数更新组件的过程
 ```js
 // packages/runtime-core/src/renderer.ts
 const setupRenderEffect = (instance, initialVNode, container, anchor, parentSuspense, isSVG, optimized) => {
@@ -44,7 +44,7 @@ const setupRenderEffect = (instance, initialVNode, container, anchor, parentSusp
 ```
 更新组件主要做三件事情：**更新组件 vnode 节点、渲染新的子树 vnode、根据新旧子树 vnode 执行 patch 逻辑**。
 
-### 核心逻辑：patch 流程
+## 核心逻辑：patch 流程
 patch -> processComponent -> updateComponent
 组件更新的相关逻辑updateComponent函数实现：
 ```js
@@ -514,7 +514,7 @@ result.push(i)
 
 从 result 最后一个元素 9 对应的索引 7 开始回溯，可以看到 p[7] = 6，p[6] = 5，p[5] = 3，p[3] = 1，所以通过对 p 的回溯，得到最终的 result 值是 [1, 3 ,5 ,6 ,7]，也就找到最长递增子序列的最终索引了。这里要注意，我们求解的是最长子序列索引值，它的每个元素其实对应的是数组的下标。对于我们的例子而言，[2, 1, 5, 3, 6, 4, 8, 9, 7] 的最长子序列是 [1, 3, 4, 8, 9]，而我们求解的 [1, 3 ,5 ,6 ,7] 就是最长子序列中元素在原数组中的下标所构成的新数组。
 
-### 总结
+## 总结
 这两节课我们主要分析了组件的更新流程，知道了 Vue.js 的更新粒度是组件级别的，并且 Vue.js 在 patch 某个组件的时候，如果遇到组件这类抽象节点，在某些条件下也会触发子组件的更新。
 
 对于普通元素节点的更新，主要是更新一些属性，以及它的子节点。子节点的更新又分为多种情况，其中最复杂的情况为数组到数组的更新，内部又根据不同情况分成几个流程去 diff，遇到需要移动的情况还要去求解子节点的最长递增子序列。

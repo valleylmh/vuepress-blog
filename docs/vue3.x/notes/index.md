@@ -4,6 +4,12 @@
 付费学习就是捡便宜式高效率成体系学习。
 :::
 
+[Vue3.0的优化](/vue3.x/notes/frameOptimize)
+
+[组件渲染：vnode 到真实 DOM 是如何转变的？](/vue3.x/notes/componentRender)
+
+[完整DOM diff流程](/vue3.x/notes/domDiff)
+
 ![](https://upload-images.jianshu.io/upload_images/3061147-f93f4e3c0b200497.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
