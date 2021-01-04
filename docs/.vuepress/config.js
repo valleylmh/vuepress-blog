@@ -27,7 +27,7 @@ module.exports = {
         })();
       `
     ],
-    ['script', {src: 'http://res.wx.qq.com/open/js/jweixin-1.6.0.js'}],
+    ['script', {src: 'https://res.wx.qq.com/open/js/jweixin-1.6.0.js'}],
   ],
   locales: {
     '/': {lang: 'zh-CN'}
