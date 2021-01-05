@@ -11,6 +11,7 @@ module.exports = {
   head: [
     ['link', { rel: 'shortcut icon', href: '/favicon.ico', type: 'image/x-icon' }],
     ['meta', { name: 'referrer', content: 'no-referrer' }],
+    ['meta', { name: 'color-scheme', content: 'light dark' }],
     ['meta', { name: 'baidu-site-verification', content: 'code-IoDDvZg9UC' }],
     ['meta', { name: 'baidu_union_verify', content: 'ef8729d54c118ea2f89c9b5813838aaa' }],
     ['meta', { name: 'renderer', content: 'webkit' }],

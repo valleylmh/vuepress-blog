@@ -6,4 +6,5 @@ module.exports = [
     [notes + 'compositionApi.md', '逻辑复用最佳实践：Composition API'],
     [notes + 'reactivity.md', '响应式：响应式内部的实现原理是怎样的？'],
     [notes + 'computed.md', '计算属性：计算属性比普通函数好在哪里？'],
+    [notes + 'watch.md', '侦听器：侦听器的实现原理和使用场景是什么？'],
 ]
