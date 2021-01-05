@@ -9,15 +9,19 @@
 html, body
   padding 0
   margin 0
-  background-color #fff
+  background-color var(--bgcolor)
 
 body
   font-family -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
   font-size 16px
-  color $textColor
+  color var(--text-color)
 
+body.theme-dark
+  .search-box input
+    background-color #353535!important
+    border-color var(--border-color)
 .page
   padding-left $sidebarWidth
 
@@ -28,7 +32,7 @@ body
   left 0
   right 0
   height $navbarHeight
-  background-color #fff
+  background-color var(--bgcolor)
   box-sizing border-box
   border-bottom 1px solid $borderColor
 
@@ -43,7 +47,7 @@ body
 
 .sidebar
   font-size 16px
-  background-color #fff
+  background-color var(--bgcolor)
   width $sidebarWidth
   position fixed
   z-index 10
@@ -52,7 +56,7 @@ body
   left 0
   bottom 0
   box-sizing border-box
-  border-right 1px solid $borderColor
+  border-right 1px solid var(--border-color)
   overflow-y auto
 
 {$contentClass}:not(.custom)
@@ -135,7 +139,7 @@ h1
 h2
   font-size 1.65rem
   padding-bottom .3rem
-  border-bottom 1px solid $borderColor
+  border-bottom 1px solid var(--border-color)
 
 h3
   font-size 1.35rem
@@ -159,7 +163,7 @@ p, ul, ol
 
 hr
   border 0
-  border-top 1px solid $borderColor
+  border-top 1px solid var(--border-color)
 
 table
   border-collapse collapse
@@ -174,8 +178,15 @@ tr
     background-color #f6f8fa
 
 th, td
-  border 1px solid #dfe2e5
+  border 1px solid var(--grey14)
   padding .6em 1em
+
+.theme-dark
+  tr:nth-child(2n)
+    background-color #252322
+
+  th, td
+    border 1px solid var(--grey12)
 
 .theme-container
   &.sidebar-open
@@ -197,5 +208,23 @@ th, td
 
     .page
       padding-left 0
+
+::-webkit-scrollbar
+  width 6px
+  height 6px
+
+::-webkit-scrollbar-track-piece
+  background-color rgba(0, 0, 0, 0.1)
+  -webkit-border-radius 6px
+
+::-webkit-scrollbar-thumb:vertical
+  height 6px
+  background-color $accentColor
+  -webkit-border-radius 6px
+
+::-webkit-scrollbar-thumb:horizontal
+  width 6px
+  background-color $accentColor
+  -webkit-border-radius 6px
 
 @require 'mobile.styl'

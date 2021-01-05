@@ -42,6 +42,7 @@ module.exports = {
   themeConfig: {
     editLinks: false,
     docsDir: 'docs',
+    logo: '/logo.jpg',
     algolia: {
       // 申请邮件成功会返回下面的apiKey和indexName
       apiKey: '79ccf0632a76664033618fcec9968e1b',

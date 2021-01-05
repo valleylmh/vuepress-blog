@@ -21,7 +21,7 @@ export default {
   display: flex;
 }
 .qr .we-intro {
-  color: #0006;
+  color: var(--text-color);
   font-size: .8em;
   width: 54%;
 }
