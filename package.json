@@ -20,7 +20,6 @@
     "axios": "^0.19.2",
     "dayjs": "^1.9.7",
     "jssha": "^1.6.0",
-    "vuepress": "^1.7.1",
-    "vuepress-theme-hope": "^1.8.0"
+    "vuepress": "^1.7.1"
   }
 }

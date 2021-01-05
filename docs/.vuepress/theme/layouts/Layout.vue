@@ -16,6 +16,7 @@ export default {
     QR,
   },
   created() {
+    if(typeof window === 'undefined') return
     const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)")
     const bodyClassList = document.body.classList
     bodyClassList.remove('theme-dark')
