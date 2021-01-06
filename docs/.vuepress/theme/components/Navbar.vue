@@ -1,5 +1,5 @@
 <template>
-  <header class="navbar">
+  <header class="navbar" :class="{ 'can-hide': canHide }">
     <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
 
     <RouterLink
@@ -54,7 +54,8 @@ export default {
 
   data () {
     return {
-      linksWrapMaxWidth: null
+      linksWrapMaxWidth: null,
+      canHide: false
     }
   },
 
@@ -74,6 +75,7 @@ export default {
     const handleLinksWrapWidth = () => {
       if (document.documentElement.clientWidth < MOBILE_DESKTOP_BREAKPOINT) {
         this.linksWrapMaxWidth = null
+        this.canHide = true
       } else {
         this.linksWrapMaxWidth = this.$el.offsetWidth - NAVBAR_VERTICAL_PADDING
           - (this.$refs.siteName && this.$refs.siteName.offsetWidth || 0)
@@ -99,6 +101,9 @@ $navbar-horizontal-padding = 1.5rem
 .navbar
   padding $navbar-vertical-padding $navbar-horizontal-padding
   line-height $navbarHeight - 1.4rem
+  transition transform 0.3s ease-in-out
+  .hide-navbar &.can-hide
+    transform translateY(-100%)
   a, span, img
     display inline-block
   .logo

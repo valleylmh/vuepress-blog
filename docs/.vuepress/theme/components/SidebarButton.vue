@@ -33,6 +33,11 @@
     display block
     width 1.25rem
     height 1.25rem
+    transition transform 0.2s ease-in-out
+
+.sidebar-open .sidebar-button
+  .icon
+    transform rotate(90deg)
 
 @media (max-width: $MQMobile)
   .sidebar-button
