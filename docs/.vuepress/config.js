@@ -10,6 +10,7 @@ module.exports = {
   description: '越努力越幸运',
   head: [
     ['link', { rel: 'shortcut icon', href: '/favicon.ico', type: 'image/x-icon' }],
+    ['link', { rel: 'apple-touch-icon', href: '/logo.jpg' }],
     ['meta', { name: 'referrer', content: 'no-referrer' }],
     ['meta', { name: 'color-scheme', content: 'light dark' }],
     ['meta', { name: 'baidu-site-verification', content: 'code-IoDDvZg9UC' }],
