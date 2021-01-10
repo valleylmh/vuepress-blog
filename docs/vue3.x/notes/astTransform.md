@@ -233,7 +233,7 @@ Vue.js 内部大概内置了八种转换函数，分别处理指令、表达式�
 
 ### Element 节点转换函数
 首先，我们来看一下 Element 节点转换函数的实现：
-```
+```js
 const transformElement = (node, context) => {
   if (!(node.type === 1 /* ELEMENT */ &&
     (node.tagType === 0 /* ELEMENT */ ||

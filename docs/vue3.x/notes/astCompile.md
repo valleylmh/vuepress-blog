@@ -64,7 +64,7 @@ AST 是树状结构，对于树中的每个节点，会有 type 字段描述节�
 ```js
 function baseParse(content, options = {}) { 
     // 创建解析上下文 
-    const context = createPa  rserContext(content, options) 
+    const context = createParserContext(content, options) 
     const start = getCursor(context) 
     // 解析子节点，并创建 AST  
     return createRoot(parseChildren(context, 0 /* DATA */, []), getSelection(context, start)) 
