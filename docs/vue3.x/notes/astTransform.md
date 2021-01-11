@@ -441,7 +441,7 @@ const transformExpression = (node, context) => {
 由于表达式本身不会再有子节点，所以它也不需要退出函数，直接在进入函数时做转换处理即可。
 
 需要注意的是，**只有在 Node.js 环境下的编译或者是 Web 端的非生产环境下才会执行 transformExpression**。
-transformExpression 主要做的事情就是转换插值和元素指令中的动态表达式，把简单的表达式对象转换成复合表达式对象，内部主要是通过 processExpression 函数完成。举个例子，比如这个模板：{{ msg + test }}，它执行 parse 后生成的表达式节点 node.content 值为一个简单的表达式对象：
+transformExpression 主要做的事情就是转换插值和元素指令中的动态表达式，把简单的表达式对象转换成复合表达式对象，内部主要是通过 processExpression 函数完成。举个例子，比如这个模板：`{ msg + test }`，它执行 parse 后生成的表达式节点 node.content 值为一个简单的表达式对象：
 ```json
 {
   "type": 4,
@@ -476,7 +476,7 @@ transformExpression 主要做的事情就是转换插值和元素指令中的动
 
 那么为什么需要加这个前缀呢？
 
-我们就要想到模板中引用的的 msg 和 test 对象最终都是在组件实例中访问的，但为了书写模板方便，Vue.js 并没有让我们在模板中手动加组件实例的前缀，例如：`{{ this.msg + this.test }}`，这样写起来就会不够方便，但如果用 JSX 写的话，通常要手动写 this。
+我们就要想到模板中引用的的 msg 和 test 对象最终都是在组件实例中访问的，但为了书写模板方便，Vue.js 并没有让我们在模板中手动加组件实例的前缀，例如：`{this.msg + this.test}`，这样写起来就会不够方便，但如果用 JSX 写的话，通常要手动写 this。
 
 你可能会有疑问，为什么 Vue.js 2.x 编译的结果没有 _ctx 前缀呢？这是因为 Vue.js 2.x 的编译结果使用了”黑魔法“ with，比如上述模板，在 Vue.js 2.x 最终编译的结果：`with(this){return _s(msg + test)}`。
 
@@ -568,7 +568,7 @@ transformText 主要的目的就是合并一些相邻的文本节点，然后为
 
 在内部，静态文本节点和动态插值节点都被看作是一个文本节点，所以函数首先遍历节点的子节点，然后把子节点中的相邻文本节点合并成一个。
 
-比如示例中的文本节点：`<p>hello {{ msg + test }}</p>`。
+比如示例中的文本节点：`<p>hello { msg + test }</p>`。
 
 在转换之前，p 节点对应的 children 数组有两个元素，第一个是纯文本节点，第二个是一个插值节点，这个数组也是前面提到的表达式节点转换后的结果：
 ```json

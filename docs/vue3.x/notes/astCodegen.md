@@ -562,7 +562,7 @@ genNodeList 就是通过遍历 nodes，拿到每一个 node，然后判断 node 
 ```
 接下来我们依据 nodes 的值继续生成代码，首先 nodes 第一个元素的值是 'div' 字符串，根据前面的逻辑，直接把字符串添加到代码上即可，由于 multilines 为 false，comma 为 true，因此生成如下代码：
 
-复制代码
+```js
 import { resolveComponent as _resolveComponent, createVNode as _createVNode, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, openBlock as _openBlock, createBlock as _createBlock } from "vue"
 const _hoisted_1 = { class: "app" }
 const _hoisted_2 = { key: 1 }
@@ -571,6 +571,7 @@ const _hoisted_4 = /*#__PURE__*/_createVNode("p", null, "static", -1 /* HOISTED 
 export function render(_ctx, _cache) {
   const _component_hello = _resolveComponent("hello")
   return (_openBlock(), _createBlock("div",
+```
 接下来看 nodes 第二个元素，它代表的是 vnode 的属性 props，是一个简单的对象表达式，就会递归执行 genNode，进一步执行 genExpression，来看一下它的实现：
 ```js
 function genExpression(node, context) {
