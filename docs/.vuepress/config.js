@@ -67,6 +67,7 @@ module.exports = {
         text: '随笔', //link: '/study_life/',
         ariaLabel: '生活的理想就是为了理想的生活',
         items: [
+          { text: '买房小记', link: '/life/house/' },
           { text: '年度总结', link: '/life/year/' },
           { text: '杂记', link: '/life/other/' },
           { text: '老喻的人生算法课', link: '/life_algorithm/' },
@@ -96,6 +97,12 @@ module.exports = {
           collapsable: false,
           children: ['2019','2020']
         },
+      ],
+      '/life/house/': [
+        ['buy-house', '2021年记录杭州买房大事'],
+        ['prepare-buy-house', '杭州看房小记（一）'],
+        ['prepare-buy-house2', '看房小记（二）'],
+        ['prepare-buy-house3', '看房小记（三）——买房自测'],
       ],
       '/life/other/': [
         ['homeTown01', '老家农村的结婚：赤裸裸的金钱交易'],
