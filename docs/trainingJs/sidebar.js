@@ -1,0 +1,18 @@
+module.exports = [
+  "手动实现call、apply、bind",
+  "EventEmitter",
+  "防抖",
+  "节流",
+  "浅拷贝和深拷贝",
+  "数组去重、扁平、最值",
+  "数组乱序-洗牌算法",
+  "函数柯里化",
+  "手动实现JSONP",
+  "模拟实现promise",
+  "手动实现ES5继承",
+  "手动实现instanceof",
+  "基于Promise的ajax封装",
+  "单例模式",
+  "异步循环打印",
+  "图片懒加载",
+];

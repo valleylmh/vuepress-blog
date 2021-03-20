@@ -2,6 +2,10 @@
 const path = require('path')
 const vue2 = require('../vue2.x/sidebar')
 const vue3 = require('../vue3.x/sidebar')
+const dataStructure = require('../dataStructure/sidebar')
+const algorithm = require('../algorithm/sidebar')
+const nodeJs = require('../nodeJs/sidebar')
+const trainingJs = require('../trainingJs/sidebar')
 // console.log(path.resolve(__dirname, './public/bdunion.txt'))
 module.exports = {
   // base: '/',
@@ -64,6 +68,16 @@ module.exports = {
         ]
       },
       {
+        text: '前端进阶',
+        ariaLabel: '学会简单就是不简单',
+        items: [
+          { text: 'Node.js', link: '/nodeJs/notes/' },
+          { text: '数据结构', link: '/dataStructure/' },
+          { text: '算法', link: '/algorithm/' },
+          { text: '手撕JS', link: '/trainingJs/' },
+        ]
+      },
+      {
         text: '随笔', //link: '/study_life/',
         ariaLabel: '生活的理想就是为了理想的生活',
         items: [
@@ -77,6 +91,34 @@ module.exports = {
       { text: 'github', link: 'https://github.com/valleylmh/vuepress-blog' },
     ],
     sidebar: {
+      '/nodeJs/notes/': [
+        {
+          title: 'nodeJs学习向全栈进阶',
+          collapsable: false,
+          children: nodeJs
+        }
+      ],
+      '/dataStructure/': [
+        {
+          title: '进阶学习之数据结构',
+          collapsable: false,
+          children: dataStructure
+        }
+      ],
+      '/algorithm/': [
+        {
+          title: '进阶学习之算法',
+          collapsable: false,
+          children: algorithm
+        }
+      ],
+      '/trainingJs/': [
+        {
+          title: '手撕JS练习基本功',
+          collapsable: false,
+          children: trainingJs
+        }
+      ],
       '/vue3.x/notes/': [
         {
           title: 'VueJs3.0核心源码解析',
