@@ -14,7 +14,7 @@
 
 在`BFS`中，结点的处理顺序与它们添加到队列的顺序是完全相同的顺序，即先进先出，所以广度优先搜索一般使用队列实现。
 
-- [从上到下打印二叉树](http://www.conardli.top/docs/dataStructure/二叉树/从上到下打印二叉树.html)
+- [从上到下打印二叉树](/dataStructure/二叉树/从上到下打印二叉树.html)
 - [单词接龙](https://leetcode-cn.com/problems/word-ladder/)
 - [员工的重要性](https://leetcode-cn.com/problems/employee-importance/)
 - [岛屿数量](https://leetcode-cn.com/problems/number-of-islands/)
@@ -29,8 +29,8 @@
 
 在`DFS`中，结点的处理顺序是完全相反的顺序，就像它们被添加到栈中一样，它是后进先出。所以深度优先搜索一般使用栈实现。
 
-- [二叉树的中序遍历](http://www.conardli.top/docs/dataStructure/%E4%BA%8C%E5%8F%89%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86.html)
-- [二叉树的最大深度](http://www.conardli.top/docs/dataStructure/二叉树/二叉树的最大深度.html)
+- [二叉树的中序遍历](/dataStructure/%E4%BA%8C%E5%8F%89%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86.html)
+- [二叉树的最大深度](/dataStructure/二叉树/二叉树的最大深度.html)
 - [路径总和](https://leetcode-cn.com/problems/path-sum/)
 - [课程表](https://leetcode-cn.com/problems/course-schedule/)
 - [岛屿数量](https://leetcode-cn.com/problems/number-of-islands/)
